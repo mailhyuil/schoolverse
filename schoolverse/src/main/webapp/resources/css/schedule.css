@@ -48,7 +48,7 @@ td {
   transition: linear 0.2s;
 }
 
-img {
+#map {
   flex: 1;
   height: 100vh;
   background-image: url("../img/map.png");

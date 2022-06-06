@@ -13,7 +13,7 @@
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=nanq2sq1z7"></script>
 </head>
 <link rel="stylesheet" href="${rootPath }/resources/css/reset.css" />
-<link rel="stylesheet" href="${rootPath }/resources/css/academy-info.css" />
+<link rel="stylesheet" href="${rootPath }/resources/css/search.css" />
 <link rel="stylesheet" href="${rootPath }/resources/css/basket.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
@@ -244,6 +244,6 @@
 
 </body>
 <script src="${rootPath }/resources/js/basket.js"></script>
-<script src="${rootPath }/resources/js/academy-info.js"></script>
-<script src="${rootPath }/resources/js/map.js?ver=2"></script>
+<script src="${rootPath }/resources/js/search.js"></script>
+<script src="${rootPath }/resources/js/map_search.js?ver=2"></script>
 </html>

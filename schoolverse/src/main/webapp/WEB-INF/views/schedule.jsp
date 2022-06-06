@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Page</title>
     <link rel="stylesheet" href="${rootPath }/resources/css/schedule.css" />
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=nanq2sq1z7"></script>
   </head>
 
   <body>
@@ -156,12 +157,8 @@
         </div>
         <div class="sub">-</div>
       </div>
-      <img />
-      <div class="class_point">xx수학학원</div>
-      <div class="class_point">zz영어학원</div>
-      <div class="class_point">yy영어학원</div>
-      <div class="class_point">oo피아노학원</div>
-      <div class="class_point">kk태권도</div>
+      <div id="map"></div>
+
       <button class="toPay" onclick="location.href = '/api/pay' ">
         결제하기
       </button>
@@ -171,4 +168,5 @@
     </div>
   </body>
   <script src="${rootPath }/resources/js/schedule.js"></script>
+  <script src="${rootPath }/resources/js/map_schedule.js?ver=3"></script>
 </html>
