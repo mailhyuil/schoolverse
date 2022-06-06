@@ -10,6 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>academy-info</title>
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=nanq2sq1z7"></script>
 </head>
 <link rel="stylesheet" href="${rootPath }/resources/css/reset.css" />
 <link rel="stylesheet" href="${rootPath }/resources/css/academy-info.css" />
@@ -126,13 +127,7 @@
   </aside>
 
   <!-- ////////////////////////////////////// -->
-  <div class="map">
-    <button class="map-btn">yy영어학원</button>
-    <button class="map-btn">zz영어학원</button>
-    <button class="map-btn">xx수학학원</button>
-    <button class="map-btn">oo피아노학원</button>
-    <button class="map-btn">kk태권도</button>
-  </div>
+  <div id="map" style="width:100vw; height:100vh;"></div>
   <section class="section">
     <div class="put-in">
       <div class="put-in-btn">
@@ -250,5 +245,5 @@
 </body>
 <script src="${rootPath }/resources/js/basket.js"></script>
 <script src="${rootPath }/resources/js/academy-info.js"></script>
-
+<script src="${rootPath }/resources/js/map.js?ver=2"></script>
 </html>
