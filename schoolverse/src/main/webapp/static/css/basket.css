@@ -1,17 +1,29 @@
 @import 'reset.css';
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+*{
+	font-family: 'Noto Sans KR', sans-serif !important;
+}
 
 div.wrapper {
+    display: flex;
     position: fixed;
     top: 0;
     right: 0;
     transform: translateX(1000px);
     transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
     height: 100%;
-    width: 30rem;
     background-color: rgb(245, 245, 245);
-    right: 0;
-    display: flex;
     box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.2);
 
 }
@@ -84,7 +96,7 @@ div.wrapper div.classes {
     min-height: 5rem;
     width: 100%;
     margin: .5rem 0;
-    border-radius: .3rem;
+    border-radius:0.8rem;
     box-shadow: 0px 0px 20px rgba(0, 0, 60, 0.1);
     padding: 1rem;
     cursor: pointer;
@@ -124,7 +136,7 @@ div.wrapper div.classes div.content-section {
     background-color: rgb(39, 39, 39);
     color: white;
     border-radius: 50%;
-    transition: linear 0.2s;
+  transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .sub:hover {

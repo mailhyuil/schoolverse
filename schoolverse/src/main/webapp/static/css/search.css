@@ -1,3 +1,21 @@
+@import "reset.css";
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+*{
+	font-family: 'Noto Sans KR', sans-serif !important;
+}
+
 body {
   display: flex;
   width: 100vw;
@@ -40,7 +58,7 @@ body {
 }
 
 .aside.click {
-  transform: translateX(-452px);
+  transform: translateX(-420px);
 }
 
 .aside_btn {
@@ -333,26 +351,55 @@ article {
   font-weight: 600;
   line-height: 2rem;
 }
-
+.about_class{
+	display:flex;
+	margin:1rem;
+	padding:1rem;
+	border-radius:.8rem;
+	border: 5px solid rgb(230, 230, 230);
+}
+.about_class i {
+	margin-left:auto;
+}
 .btn_box {
   position: absolute;
   bottom: 1rem;
   left: 30rem;
 }
 
-.toSchedule {
+.toHome {
   position: absolute;
+    width:10rem;
   border: none;
   bottom: 1rem;
-  right: -10rem;
+  right: -11rem;
   padding: 1rem 2rem;
-  background-color: rgb(255, 175, 4);
+  background-color: white;
   font-weight: bold;
-  border-radius: .3rem;
+  border-radius:0.8rem;
   font-size: 1.2rem;
   cursor: pointer;
+  box-shadow:1px 1px 10px rgba(0,0,0,0.2);
 }
 
 .toSchedule:active {
+  background-color: rgb(255, 104, 4);
+}
+.toSchedule {
+  position: absolute;
+  width:10rem;
+  border: none;
+  bottom: 5.5rem;
+  right: -11rem;
+  padding: 1rem 2rem;
+  background-color: white;
+  font-weight: bold;
+  border-radius:0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+   box-shadow:1px 1px 10px rgba(0,0,0,0.2);
+  
+}
+.toHome:active {
   background-color: rgb(255, 104, 4);
 }

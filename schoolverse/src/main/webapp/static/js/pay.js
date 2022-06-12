@@ -16,11 +16,12 @@ for (let c of classes) {
   sum += intPayment;
 }
 
-result.innerHTML = `총액 : ${sum}원/월`;
+result.innerHTML = `총액 : ${sum.toLocaleString('ko-KR')}원/월`;
 
 for (let sub of subs) {
   sub.addEventListener("click", (e) => {
     classParent.removeChild(e.target.parentNode); // 장바구니 빼기
+    fetch(`/search/basket_delete?class_code=${e.target.parentNode.dataset.class_code}`)
     classes = document.querySelectorAll(".classes");
     sum = 0;
     console.log(classes);
@@ -28,14 +29,14 @@ for (let sub of subs) {
       let intPayment = Number.parseInt(c.dataset.expense);
       sum += intPayment;
     }
-    result.innerHTML = `총액 : ${sum}원/월`;
+    result.innerHTML = `총액: ${sum.toLocaleString('ko-KR')} 원 / 월`;
 
     if (!classParent.hasChildNodes()) {
       // 장바구니 내용이 없으면 비었다고 표시
 
       const h1 = document.createElement("h1");
       classParent.appendChild(h1);
-      h1.innerHTML = `장바구니가 비었습니다 <i class="xi-emoticon-sad xi-2x"></i>`;
+      h1.innerHTML = `장바구니가 비었습니다 <i class="xi-emoticon-sad xi-2x"/>`;
     }
   });
 }
