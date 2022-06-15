@@ -4,7 +4,7 @@
 <c:set value="${pageContext.request.contextPath}" var="rootPath"/>
 <!DOCTYPE html>
 <html lang="ko">
-
+	
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,31 +13,33 @@
      <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=nanq2sq1z7"></script>
 </head>
-<link rel="stylesheet" href="static/css/reset.css?123412sss21234" />
-<link rel="stylesheet" href="static/css/search.css?123s22s2s123e34" />
-<link rel="stylesheet" href="static/css/basket.css?12112ss123234">
+<link rel="stylesheet" href="static/css/reset.css?123412sdfss21234" />
+<link rel="stylesheet" href="static/css/search.css?123s22s2dfs123e34" />
+<link rel="stylesheet" href="static/css/basket.css?12112ssdf123234">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
 <body>
   <aside class="aside">
     <div>
       <div id="nav">
+      
         <form>
           <div class="search-bar">
             <input/>
-            <button onclick="location.href = '/search'">
+            <button onclick="location.href = '/aca_name_search'">
               <i class="xi-search xi-2x"></i>
             </button>
           </div>
         </form>
+        
       </div>
 
       <div id="edu_list">
         <div>
           <table class="academy">
-		<c:forEach items="${ACA}" var="ACA">
+		<c:forEach items="${SEARCH}" var="SEARCH">
             <tr >
-              <th data-aca_code = "${ACA.aca_code}">${ACA.aca_name}</th>
+              <th data-aca_code = "${SEARCH.aca_code}">${SEARCH.aca_name}</th>
             </tr>
 		</c:forEach>
           </table>
@@ -57,7 +59,6 @@
   <!-- ///////////////////////////////////////////////////////////////////////// -->
 
   <div id="map" style="width:100vw; height:100vh;"></div>
-  
   <!-- ///////////////////////////////////////////////////////////////////////// -->
   
     <!-- 장바구니 시작 -->
@@ -130,9 +131,9 @@
       </div>
     </div>
   </section>
-  
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2e1d9784e6d6ac580791dd4e2c958267&libraries=services"></script>
 </body>
-<script src="static/js/search.js?1231s2ssss2fdss3223"></script>
-<script src="static/js/basket.js?1231s2dssss2ss23323"></script>
-<script src="static/js/map_search.js?1212ssss2ss233123"></script>
+<script src="static/js/search.js?12hhdffsffsffs3223"></script>
+<script src="static/js/basket.js?1231fhfffsff2s23323"></script>
+<script src="static/js/map.js?1212sfhhffafs3123"></script>
 </html>

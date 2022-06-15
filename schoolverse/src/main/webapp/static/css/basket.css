@@ -16,6 +16,7 @@
 }
 
 div.wrapper {
+	z-index:99;
     display: flex;
     position: fixed;
     top: 0;
@@ -29,6 +30,7 @@ div.wrapper {
 }
 
 .basket-button {
+	z-index:50;
     position: absolute;
     display: flex;
     background-color: rgb(70, 70, 70);

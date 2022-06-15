@@ -30,6 +30,7 @@ public class ClassServiceImpl implements ClassService{
 
 	@Override
 	public int insert(ClassVO vo) {
+		dao.insert(vo);
 		return 0;
 	}
 

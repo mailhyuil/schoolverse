@@ -38,7 +38,7 @@ public class SearchController {
 	private ClassService classService;
 	
 	@RequestMapping(value = {"/",""}, method = RequestMethod.GET)
-	public String search(Model model, HttpSession session) {
+	public String search(Model model, HttpSession session, String aca_region, String aca_age, String aca_subject) {
 		List<AcademyVO> acaList = acaService.selectAll();
 		UserVO userVO = (UserVO)session.getAttribute("USER");
 		if(userVO == null) {
@@ -51,12 +51,21 @@ public class SearchController {
 			classList.add(classService.findById(c));
 		}
 		
+		List<AcademyVO> searchList = acaService.findByAcaRegion(aca_region);
+		List<AcademyVO> resultList = new ArrayList<>();
+		for(AcademyVO vo:searchList) {
+			if(vo.getAca_subject().equals(aca_subject) && vo.getAca_age().equals(aca_age)) {
+				resultList.add(vo);
+			}
+		}		
+		
+		model.addAttribute("SEARCH", resultList);
 		model.addAttribute("CLASS", classList);
 		model.addAttribute("ACA", acaList);
 		return null;
 	}
 	@RequestMapping(value = "/basket_add", method = RequestMethod.GET)
-	public String basket_add(Model model,String c_code, HttpSession session) {
+	public String basket_add(Model model,long c_code, HttpSession session) {
 		
 		UserVO userVO = (UserVO)session.getAttribute("USER");
 		
@@ -103,7 +112,6 @@ public class SearchController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		return vo;
 	}
 	

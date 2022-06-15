@@ -7,14 +7,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
 @Getter
+@Setter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class ScheduleVO {
-	private long sche_code;
-	private String sche_day;
-	private String sche_period;
+public class TeacherVO {
+	private long teacher_id;
+	private String teacher_name;
+	private String teacher_info;
+	private long aca_teacher;
 }

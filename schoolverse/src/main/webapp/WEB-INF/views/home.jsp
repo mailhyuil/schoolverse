@@ -38,7 +38,7 @@
           </c:if>
           <c:if test="${USER.role == 'ADMIN' }">
                     <ul>
-            <li><a href="/user/logout">학원등록하기</a></li>
+            <li><a href="/user/register">학원등록하기</a></li>
           	<li><a href="/user/logout">로그아웃</a></li>
           	          </ul>
           </c:if>
@@ -48,10 +48,11 @@
   <!--헤더 끝-->
   <section class="section">
     <!--주 내용-->
+    <form action="/search">
     <div class="search-bar">
       <!--검색창-->
       <div class="search-detail">
-        <select class="select-main" name="지역">
+        <select class="select-main" name="aca_region">
           <option value="">지역</option>
           <option value="광산구">광산구</option>
           <option value="남구">남구</option>
@@ -62,48 +63,21 @@
       </div>
       <div class="search-wall"></div>
       <div class="search-detail">
-        <select class="select-main" name="과목">
+        <select class="select-main" name="aca_subject">
         <option value="">과목</option>
-          <option value="국어">국어</option>
+          <option value="입시">입시</option>
           <option value="영어">영어</option>
-          <option value="수학">수학</option>
-          <option value="과학">과학</option>
           <option value="예체능">예체능</option>
           <option value="기타">기타</option>
         </select>
       </div>
       <div class="search-wall"></div>
       <div class="search-detail">
-        <select class="select-main" name="나이">
+        <select class="select-main" name="aca_age">
         <option value="">나이</option>
-          <option value="7세 이하">7세 이하</option>
-          <option value="8세 ~ 10세">8세 ~ 10세</option>
-          <option value="11세 ~ 13세">11세 ~ 13세</option>
-          <option value="14세 ~ 16세">14세 ~ 16세</option>
-          <option value="17세 ~ 19세">17세 ~ 19세</option>
-          <option value="20세 이상">20세 이상</option>
+          <option value="학생">학생</option>
+          <option value="성인">성인</option>
         </select>
-      </div>
-      <div class="search-wall"></div>
-      <div class="search-detail">
-        <select class="select-main" name="수강료">
-        <option value="">수강료</option>
-          <option value="100,000원 이하">100,000원 이하</option>
-          <option value="100,000원 ~ 300,000원">
-            100,000원 ~ 300,000원
-          </option>
-          <option value="300,000원 ~ 600,000원">
-            300,000원 ~ 600,000원
-          </option>
-          <option value="600,000원 ~ 1,000,000원">
-            600,000원 ~ 1,000,000원
-          </option>
-          <option value="1,000,000원 이상">1,000,000원 이상</option>
-        </select>
-      </div>
-      <div class="search-wall"></div>
-            <div class="search-detail">
-      <input class="select-main" type="text" placeholder="학원명을 입력해주세요"/>
       </div>
       <div class="search-wall"></div>
       <button class="search-button" onclick="location.href = '/search' ">
@@ -111,13 +85,13 @@
       </button>
     </div>
 
-<div id="artboard"></div>
-
-  </section>
+</form>
+</section>
   <!--주 내용 끝-->
+<div id="artboard"></div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
-<script src="/static/js/sketch.js?12dd3sssasss223"></script>
+<script src="/static/js/sketch.js?12dd3sssssssasss223"></script>
 <script src="/static/js/p5.min.js"></script>
 
 </html>

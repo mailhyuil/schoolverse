@@ -12,12 +12,11 @@ const url = new URL(window.location.href);
 const urlParams = url.searchParams;
 if (urlParams.get("result") === "USED") {
   alert("이미 추가된 수업입니다.")
-  window.location.search = "";
+  location.href.search = "";
 }
 
 academy?.addEventListener("click", (e) => {
   const target = e.target;
-  console.log(target.dataset.aca_code)
 
   fetch(`/search/aca_info?aca_code=${target.dataset.aca_code}`)
     .then(res => res.json())
@@ -59,7 +58,27 @@ academy?.addEventListener("click", (e) => {
     basket_button.style.left = "6rem";
     basket_button.style.right = null;
   }
-})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 for (let btn of map_button) {
   btn.addEventListener("click", () => {

@@ -29,6 +29,7 @@ public class AcademyServiceImpl implements AcademyService{
 
 	@Override
 	public int insert(AcademyVO vo) {
+		dao.insert(vo);
 		return 0;
 	}
 
@@ -41,5 +42,26 @@ public class AcademyServiceImpl implements AcademyService{
 	public int delete(String id) {
 		return 0;
 	}
+
+	@Override
+	public List<AcademyVO> findByAcaRegion(String aca_region) {
+		return dao.findByAcaRegion(aca_region);
+	}
+
+	@Override
+	public List<AcademyVO> findByAcaSubject(String aca_subject) {
+		return dao.findByAcaSubject(aca_subject);
+	}
+
+	@Override
+	public List<AcademyVO> findByAcaAge(String aca_age) {
+		return dao.findByAcaAge(aca_age);
+	}
+
+	@Override
+	public AcademyVO findByAcaCode(long aca_code) {
+		return dao.findByAcaCode(aca_code);
+	}
+
 
 }
