@@ -75,6 +75,7 @@ div.sub-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width:269.424;
 }
 
 div.sub-wrapper h1 {

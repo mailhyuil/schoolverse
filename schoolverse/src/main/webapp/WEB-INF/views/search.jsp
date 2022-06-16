@@ -13,9 +13,9 @@
      <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=nanq2sq1z7"></script>
 </head>
-<link rel="stylesheet" href="static/css/reset.css?123412sdfss21234" />
-<link rel="stylesheet" href="static/css/search.css?123s22s2dfs123e34" />
-<link rel="stylesheet" href="static/css/basket.css?12112ssdf123234">
+<link rel="stylesheet" href="static/css/reset.css?12341ssf2ff21234" />
+<link rel="stylesheet" href="static/css/search.css?123ffssdfffs123e34" />
+<link rel="stylesheet" href="static/css/basket.css?12112sfdf123234">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
 <body>
@@ -71,7 +71,7 @@
       <i class="xi-angle-right xi-2x"></i>
     </div>
     <div class="sub-wrapper">
-<c:forEach items="${CLASS }" var="CLASS">
+<c:forEach items="${CLASSES}" var="CLASS">
       <div class="classes" data-aca_code = "${CLASS.aca_code}" data-class_code = "${CLASS.class_code}" data-expense = "${CLASS.class_fee }">
         <div class="content-section">
           <h1 class="title">${CLASS.class_name }</h1>
@@ -111,19 +111,7 @@
           <h2>선생님소개</h2>
           
           <div class="teacher-info">
-            <img src="static/img/teacher1.jpg" />
-            <div>
-              <h3>주혜연 선생님</h3>
-              <p>귀에 쏙 꽂히는 영어강의 No.1!!</p>
-            </div>
-          </div>
-          
-          <div class="teacher-info">
-            <img src="static/img/teacher2.png" />
-            <div>
-              <h3>김보라 선생님</h3>
-              <p>차근차근 기초부터 쌓아가는 탄탄영어의 탑!!</p>
-            </div>
+
           </div>
         </div>
         
@@ -133,7 +121,7 @@
   </section>
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2e1d9784e6d6ac580791dd4e2c958267&libraries=services"></script>
 </body>
-<script src="static/js/search.js?12hhdffsffsffs3223"></script>
-<script src="static/js/basket.js?1231fhfffsff2s23323"></script>
-<script src="static/js/map.js?1212sfhhffafs3123"></script>
+<script src="static/js/search.js?12hhffffssffffs3sss22116"></script>
+<script src="static/js/basket.js?1231fffsssssfs23323"></script>
+<script src="static/js/map.js?1212ssffssssf4123"></script>
 </html>

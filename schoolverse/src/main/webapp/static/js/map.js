@@ -1,9 +1,12 @@
-
-
-fetch(`/aca_map_search?aca_region=${urlParams.get("aca_region")}&aca_subject=${urlParams.get("aca_subject")}&aca_age=${urlParams.get("aca_age")}`)
-  .then(res => res.json())
-  .then(json => {
-
+fetch(
+  `/aca_map_search?aca_region=${urlParams.get(
+    "aca_region"
+  )}&aca_subject=${urlParams.get("aca_subject")}&aca_age=${urlParams.get(
+    "aca_age"
+  )}`
+)
+  .then((res) => res.json())
+  .then((json) => {
     var mapContainer = document.getElementById("map"), // 지도를 표시할 div
       mapOption = {
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -32,7 +35,7 @@ fetch(`/aca_map_search?aca_region=${urlParams.get("aca_region")}&aca_subject=${u
           var marker = new kakao.maps.Marker({
             map: map,
             position: coords,
-            clickable: true
+            clickable: true,
           });
 
           // 인포윈도우로 장소에 대한 설명을 표시합니다
@@ -54,27 +57,24 @@ fetch(`/aca_map_search?aca_region=${urlParams.get("aca_region")}&aca_subject=${u
           var bounds = new kakao.maps.LatLngBounds();
 
           for (var i = 0; i < results.length; i++) {
-            bounds.extend(new kakao.maps.LatLng(results[i][0].y, results[i][0].x));
+            bounds.extend(
+              new kakao.maps.LatLng(results[i][0].y, results[i][0].x)
+            );
           }
 
           // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
           map.setBounds(bounds);
         }
       });
-
-
     }
-  })
-
-
-
+  });
 
 const show_academy = (e) => {
   const target = e;
 
   fetch(`/search/aca_info?aca_code=${target.dataset.aca_code}`)
-    .then(res => res.json())
-    .then(json => {
+    .then((res) => res.json())
+    .then((json) => {
       const aca_name = document.querySelector(".aca_name");
       const aca_info = document.querySelector(".aca_info");
       const others = document.querySelector(".others");
@@ -85,18 +85,24 @@ const show_academy = (e) => {
       category_class.textContent = "수업";
       others.appendChild(category_class);
 
-      json[1].map(item => {
+      json[1].map((item) => {
         others.innerHTML += `
           <div class="about_class">
           <div>
           <h3>${item.class_name}</h3>
           <hr/>
-          <h3>수강료 : ${item.class_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원/월</h3>
+          <h3>수강료 : ${item.class_fee
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원/월</h3>
           </div>
-          <i class="xi-plus xi-3x add_basket" id="add_btn" data-c_code="${item.class_code}" onclick="location.href='/search/basket_add?c_code=${item.class_code}'" />
           </div>
+          <i class="xi-plus xi-3x add_basket" id="add_btn" data-c_code="${
+            item.class_code
+          }" onclick="location.href='/search/basket_add?c_code=${
+          item.class_code
+        }'" />
           `;
-      })
+      });
     });
   if (aca_wrapper.className == "section click") {
     return false;

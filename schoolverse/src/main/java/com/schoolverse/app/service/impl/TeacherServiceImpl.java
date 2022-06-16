@@ -43,6 +43,11 @@ public class TeacherServiceImpl implements TeacherService{
 		return 0;
 	}
 
+	@Override
+	public List<TeacherVO> findByAcaTeacher(long aca_teacher) {
+		return dao.findByAcaTeacher(aca_teacher);
+	}
+
 }
 
 

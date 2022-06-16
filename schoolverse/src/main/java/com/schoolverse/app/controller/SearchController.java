@@ -18,10 +18,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.schoolverse.app.model.AcademyVO;
 import com.schoolverse.app.model.BasketVO;
 import com.schoolverse.app.model.ClassVO;
+import com.schoolverse.app.model.TeacherVO;
 import com.schoolverse.app.model.UserVO;
 import com.schoolverse.app.service.AcademyService;
 import com.schoolverse.app.service.BasketService;
 import com.schoolverse.app.service.ClassService;
+import com.schoolverse.app.service.TeacherService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,6 +38,8 @@ public class SearchController {
 	private BasketService basketService;
 	@Autowired
 	private ClassService classService;
+	@Autowired
+	private TeacherService teacherService;
 	
 	@RequestMapping(value = {"/",""}, method = RequestMethod.GET)
 	public String search(Model model, HttpSession session, String aca_region, String aca_age, String aca_subject) {
@@ -57,27 +61,27 @@ public class SearchController {
 			if(vo.getAca_subject().equals(aca_subject) && vo.getAca_age().equals(aca_age)) {
 				resultList.add(vo);
 			}
-		}		
-		
+		}				
 		model.addAttribute("SEARCH", resultList);
-		model.addAttribute("CLASS", classList);
+		model.addAttribute("CLASSES", classList);
 		model.addAttribute("ACA", acaList);
 		return null;
 	}
+	@ResponseBody
 	@RequestMapping(value = "/basket_add", method = RequestMethod.GET)
 	public String basket_add(Model model,long c_code, HttpSession session) {
 		
 		UserVO userVO = (UserVO)session.getAttribute("USER");
 		
 		if(basketService.findByClassAndId(c_code, userVO.getUsername()) != null) {
-			return "redirect:/search?result=USED";
+			return "FAIL";
 		}
 		
 		BasketVO basketVO = BasketVO.builder().c_code(c_code).u_id(userVO.getUsername()).build();
 		
 		basketService.insert(basketVO);
 		
-		return "redirect:/search";
+		return "OK";
 	}
 
 	@RequestMapping(value = "/basket_delete", method = RequestMethod.GET)
@@ -117,13 +121,24 @@ public class SearchController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/aca_info", method = RequestMethod.GET)
-	public String aca_info(Model model,String aca_code) {
+	public String aca_info(Model model,long aca_code) {
 		List<Object> list = new ArrayList<>();
-		AcademyVO acaVO = acaService.findById(aca_code);
+		
+		AcademyVO acaVO = acaService.findByAcaCode(aca_code);
 		list.add(acaVO);
-
+		
 		List<ClassVO> classList = classService.findByAcaCode(aca_code);
 		list.add(classList);
+		
+		List<TeacherVO> teacherList = teacherService.findByAcaTeacher(acaVO.getAca_teacher());
+		list.add(teacherList);
+		System.out.println();
+		System.out.println();
+		System.out.println(acaVO.getAca_teacher());
+		System.out.println(teacherList);
+		System.out.println();
+		System.out.println();
+		System.out.println();
 		ObjectMapper mapper = new ObjectMapper();
 		 
 		String vo = "";

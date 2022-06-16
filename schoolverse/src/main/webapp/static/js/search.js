@@ -11,38 +11,68 @@ const academy = document.querySelector(".academy");
 const url = new URL(window.location.href);
 const urlParams = url.searchParams;
 if (urlParams.get("result") === "USED") {
-  alert("이미 추가된 수업입니다.")
+  alert("이미 추가된 수업입니다.");
   location.href.search = "";
 }
+
+const addCart = (c_code) => {
+  fetch(`/search/basket_add?c_code=${c_code}`)
+    .then((res) => res.text())
+    .then((result) => {
+      console.log(result);
+      if (result === "OK") {
+        alert("추가되었습니다.");
+      } else {
+        alert("이미 추가된 수업입니다.");
+      }
+    });
+};
 
 academy?.addEventListener("click", (e) => {
   const target = e.target;
 
   fetch(`/search/aca_info?aca_code=${target.dataset.aca_code}`)
-    .then(res => res.json())
-    .then(json => {
+    .then((res) => res.json())
+    .then((json) => {
       const aca_name = document.querySelector(".aca_name");
       const aca_info = document.querySelector(".aca_info");
       const others = document.querySelector(".others");
+      const teacher = document.querySelector(".teacher-info");
       aca_name.textContent = `${json[0].aca_name}`;
       aca_info.textContent = `${json[0].aca_info}`;
       others.textContent = "";
+      teacher.textContent = "";
+
       const category_class = document.createElement("h2");
       category_class.textContent = "수업";
       others.appendChild(category_class);
-
-      json[1].map(item => {
+      console.log(json);
+      json[1].map((item) => {
         others.innerHTML += `
         <div class="about_class">
         <div>
         <h3>${item.class_name}</h3>
         <hr/>
-        <h3>수강료 : ${item.class_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원/월</h3>
+        <h3>수강료 : ${item.class_fee
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원/월</h3>
         </div>
-        <i class="xi-plus xi-3x add_basket" id="add_btn" data-c_code="${item.class_code}" onclick="location.href='/search/basket_add?c_code=${item.class_code}'" />
+        </div>
+        <i class="xi-plus xi-3x add_basket" id="add_btn" data-c_code="${
+          item.class_code
+        }" onclick="addCart('${item.class_code}')" />
+        `;
+      });
+
+      json[2].map((item) => {
+        teacher.innerHTML += `
+        <img src="static/img/teacher2.png" />
+        <div>
+          <h3>${item.teacher_name}</h3>
+          <p>${item.teacher_info}</p>
         </div>
         `;
-      })
+      });
     });
   if (aca_wrapper.className == "section click") {
     return false;
@@ -59,26 +89,6 @@ academy?.addEventListener("click", (e) => {
     basket_button.style.right = null;
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 for (let btn of map_button) {
   btn.addEventListener("click", () => {

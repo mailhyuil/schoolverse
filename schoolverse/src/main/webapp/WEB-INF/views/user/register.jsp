@@ -90,18 +90,6 @@
         <button type="button" class="teacher_add">선생님 추가</button>
         <div class="teacher_block">
         </div>
-
-
-
-        <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-
-
-        <h2>수업 추가하기</h2>
-        <div class="class_block">
-
-        </div>
-        <button type="button" class="class_add">수업 추가</button><hr>
         <button id="btn-join" type="submit">등록하기</button>
     </form>
 

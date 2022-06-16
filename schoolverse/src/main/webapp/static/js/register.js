@@ -6,59 +6,59 @@ const _class = [];
 let _class_counter = 0;
 let _sche_counter = 0;
 form.addEventListener("submit", () => {
-    const obj = {
-        aca: {
-            aca_name: "",
-            aca_subject: "",
-            aca_addr: "",
-            aca_info: "",
-            aca_img: "",
+  const obj = {
+    aca: {
+      aca_name: "",
+      aca_subject: "",
+      aca_addr: "",
+      aca_info: "",
+      aca_img: "",
+    },
+    teacher: {
+      teacher_name: [],
+      teacher_info: [],
+    },
+    class: {
+      class_name: [],
+      class_subject: [],
+      class_fee: [],
+      class_sche: [
+        {
+          sche_day: [],
+          sche_period: [],
+        },
+      ],
+    },
+  };
+  const aca_name = document.querySelector("#aca_name");
+  obj.aca.aca_name = aca_name.value;
+  const aca_subject = document.querySelector("#aca_subject");
+  obj.aca.aca_subject = aca_subject.value;
+  const aca_info = document.querySelector("#aca_info");
+  obj.aca.aca_info = aca_info.value;
+  const aca_img = document.querySelector("#aca_img");
+  obj.aca.aca_img = aca_img.value;
+  const teacher_name = document.querySelector("#teacher_name");
+  obj.teacher.teacher_name = teacher_name.value;
+  const teacher_info = document.querySelector("#teacher_info");
+  obj.teacher.teacher_info = teacher_info.value;
+  const class_name = document.querySelector("#class_name");
+  obj.class.class_name = class_name.value;
+  const class_subject = document.querySelector("#class_subject");
+  obj.class.class_subject = class_subject.value;
+  const class_fee = document.querySelector("#class_fee");
+  obj.class.class_fee = class_fee.value;
+  const sche_day = document.querySelector("#sche_day");
+  obj.class.class_sche.sche_day = sche_day.value;
+  const sche_period = document.querySelector("#sche_period");
+  obj.class.class_sche.sche_period = sche_period.value;
 
-        },
-        teacher: {
-            teacher_name: [],
-            teacher_info: []
-        },
-        class: {
-            class_name: [],
-            class_subject: [],
-            class_fee: [],
-            class_sche: [{
-                sche_day: [],
-                sche_period: []
-            }]
-        },
-    }
-    const aca_name = document.querySelector("#aca_name");
-    obj.aca.aca_name = aca_name.value;
-    const aca_subject = document.querySelector("#aca_subject");
-    obj.aca.aca_subject = aca_subject.value;
-    const aca_info = document.querySelector("#aca_info");
-    obj.aca.aca_info = aca_info.value;
-    const aca_img = document.querySelector("#aca_img");
-    obj.aca.aca_img = aca_img.value;
-    const teacher_name = document.querySelector("#teacher_name");
-    obj.teacher.teacher_name = teacher_name.value;
-    const teacher_info = document.querySelector("#teacher_info");
-    obj.teacher.teacher_info = teacher_info.value;
-    const class_name = document.querySelector("#class_name");
-    obj.class.class_name = class_name.value;
-    const class_subject = document.querySelector("#class_subject");
-    obj.class.class_subject = class_subject.value;
-    const class_fee = document.querySelector("#class_fee");
-    obj.class.class_fee = class_fee.value;
-    const sche_day = document.querySelector("#sche_day");
-    obj.class.class_sche.sche_day = sche_day.value;
-    const sche_period = document.querySelector("#sche_period");
-    obj.class.class_sche.sche_period = sche_period.value;
-
-    //    fetch(`/user/register`);
+  //    fetch(`/user/register`);
 });
 
-
 teacher_add?.addEventListener("click", (e) => {
-    const teacher_block = document.querySelector(".teacher_block");
-    teacher_block.innerHTML += `
+  const teacher_block = document.querySelector(".teacher_block");
+  teacher_block.innerHTML += `
 <div>
     <div class="block">
         <label class="w3-text-blue">선생님 이름</label>
@@ -71,17 +71,14 @@ teacher_add?.addEventListener("click", (e) => {
 </div>
 <hr/>
     `;
-})
-
-
-
+});
 
 class_add?.addEventListener("click", (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    _class.push(document.createElement("div"));
-    class_block.appendChild(_class[_class_counter]);
-    _class[_class_counter].innerHTML += `
+  _class.push(document.createElement("div"));
+  class_block.appendChild(_class[_class_counter]);
+  _class[_class_counter].innerHTML += `
 <div>
     <div>
         <label class="w3-text-blue">수업이름</label>
@@ -101,24 +98,20 @@ class_add?.addEventListener("click", (e) => {
 </div>
 <hr/>
     `;
-    _class_counter++
-})
-
-
-
+  _class_counter++;
+});
 
 const add_period = (c) => {
-
-    _class[c].innerHTML += `
+  _class[c].innerHTML += `
     <div>
     <select name="sche_day">
-        <option id="sche_day" value="월">월</option>
-        <option id="sche_day" value="화">화</option>
-        <option id="sche_day" value="수">수</option>
-        <option id="sche_day" value="목">목</option>
-        <option id="sche_day" value="금">금</option>
-        <option id="sche_day" value="토">토</option>
-        <option id="sche_day" value="일">일</option>
+        <option id="sche_day" value="mon">월</option>
+        <option id="sche_day" value="tue">화</option>
+        <option id="sche_day" value="wed">수</option>
+        <option id="sche_day" value="thu">목</option>
+        <option id="sche_day" value="fri">금</option>
+        <option id="sche_day" value="sat">토</option>
+        <option id="sche_day" value="sun">일</option>
     </select>
     <div class="schedule-period">
         <div>
@@ -165,5 +158,5 @@ const add_period = (c) => {
 </div>
 <hr/>
     `;
-    _sche_counter++
-}
+  _sche_counter++;
+};
